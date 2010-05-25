@@ -36,9 +36,8 @@ class CSRFTokenMemcacheStorage implements StorageInterface {
     public $memcacheKey = 'csrf_token_%s'; # % descriptor
     
     public function __construct() {
-        /* if session is not initialized, don't start again */
         $this->connection = new Memcache;
-        $this->connection->connect('127.0.0.1', 11211);
+        $link = $this->connection->connect('127.0.0.1', 11211);
     }
 
     public function createToken($descriptor) {
