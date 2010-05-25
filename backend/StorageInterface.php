@@ -35,7 +35,7 @@ interface StorageInterface
     * retrieve token by descriptor
     * 
     * @access public
-    * @return string
+    * @return array
     */
     public function getTokenByDescriptor($descriptor);
 }

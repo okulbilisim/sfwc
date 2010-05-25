@@ -31,15 +31,7 @@ class CSRFTokenDatabaseStorage implements StorageInterface {
     * @var string
     * @access private
     */
-    
     private $collection;
-
-    /**
-    * __construct() for MongoDB connection
-    * 
-    * @access public
-    * @return void
-    */  
     
     public function __construct() {
         $connection       = new Mongo();
@@ -83,7 +75,5 @@ class CSRFTokenDatabaseStorage implements StorageInterface {
     }
 
 }
-
-
 
 ?>

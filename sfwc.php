@@ -31,11 +31,11 @@ class SFWC {
     */
 
     const driver = 'CSRFTokenSessionStorage';     
+
     /**
     * variable that holds single instance for singleton pattern.
     * 
-    * @var string
-    * choices CSRFTokenSessionStorage / CSRFTokenDatabaseStorage
+    * @var object
     * @access private
     */
     private static $instance = null;
@@ -43,19 +43,11 @@ class SFWC {
     /**
     * variable that holds related driver's instance for storage backend
     * 
-    * @var string
+    * @var object
     * @access public
     */
-    
     public $backend = null;
-    
-    /**
-    * variable that holds single instance for singleton pattern.
-    * 
-    * @var null
-    * @access private
-    */
-    
+        
     /**
     * secret key for creating tokens
     * 
@@ -138,7 +130,7 @@ class SFWC {
     * setter function for expireTime (seconds)
     * 
     * @access public
-    * @return string
+    * @return void
     */
     public function setExpireTime($expireTime) {
         self::$expireTime = $expireTime;
@@ -148,7 +140,7 @@ class SFWC {
     * clears token for page descriptor
     * 
     * @access public
-    * @return string
+    * @return void
     */  
     private function flushSession($descriptor) {
         $this->backend->flushSession($descriptor);
@@ -159,7 +151,7 @@ class SFWC {
     * controls token for the given value
     * 
     * @access public
-    * @return string
+    * @return boolean
     */      
     public function controlToken($token, $descriptor) {
         

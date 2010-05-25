@@ -26,6 +26,7 @@ class CSRFTokenSessionStorage implements StorageInterface {
     public $token;
     
     public function __construct() {
+        /* if session is not initialized, don't start again */
         if(session_id() == "") {
             session_start();
         }
@@ -45,6 +46,7 @@ class CSRFTokenSessionStorage implements StorageInterface {
         /*
         new random token for session and base class
         */
+
         $key = sha1(uniqid(rand(), true) . SFWC::$secret);
         $this->token = $key;
         
@@ -65,7 +67,5 @@ class CSRFTokenSessionStorage implements StorageInterface {
     }
 
 }
-
-
 
 ?>
