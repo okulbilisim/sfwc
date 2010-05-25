@@ -162,7 +162,7 @@ class SFWC {
             return False;
         }
         
-        if($_token["token"] != $token && empty($token)) {
+        if($_token["token"] != $token || empty($token)) {
             return False;
         }
         
