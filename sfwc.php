@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-include 'backend/CSRFTokenSessionStorage.class.php';
+function __autoload($class_name) {
+    require_once(sprintf("backend/%s.class.php", $class_name));
+}
+
 /*
     if you want to use mongodb as backend include this
     include 'backend/CSRFTokenDatabaseStorage.class.php';
@@ -27,7 +30,9 @@ class SFWC {
     * variable that holds single instance for singleton pattern.
     * 
     * @constant string
-    * @choices CSRFTokenSessionStorage / CSRFTokenDatabaseStorage
+    * @choices - CSRFTokenSessionStorage, (php sessions)
+    *            CSRFTokenDatabaseStorage (mongodb)
+    *            CSRFTokenMemcacheStorage (memcache)
     */
 
     const driver = 'CSRFTokenSessionStorage';     
