@@ -22,13 +22,20 @@ include 'backend/CSRFTokenSessionStorage.class.php';
  */
 
 class SFWC {
-    
-    const driver = 'CSRFTokenSessionStorage'; 
-    
+
     /**
     * variable that holds single instance for singleton pattern.
     * 
-    * @var null
+    * @constant string
+    * @choices CSRFTokenSessionStorage / CSRFTokenDatabaseStorage
+    */
+
+    const driver = 'CSRFTokenSessionStorage';     
+    /**
+    * variable that holds single instance for singleton pattern.
+    * 
+    * @var string
+    * choices CSRFTokenSessionStorage / CSRFTokenDatabaseStorage
     * @access private
     */
     private static $instance = null;
@@ -36,7 +43,7 @@ class SFWC {
     /**
     * variable that holds related driver's instance for storage backend
     * 
-    * @var null
+    * @var string
     * @access public
     */
     
@@ -55,7 +62,7 @@ class SFWC {
     * @var string
     * @access public
     */
-    public $secret = "a76s9d781;asdkl~12*";
+    public static $secret = "a76s9d781;asdkl~12*";
 
     /**
     * token string

@@ -58,7 +58,7 @@ class CSRFTokenDatabaseStorage implements StorageInterface {
         /*
         new random token for session and base class
         */
-        $key = sha1(uniqid(rand(), true) . SFWC::$secret);
+        $key = sha1(uniqid(rand(), true) . $this->secret);
         $this->token = $key;
         
         $doc = array(
