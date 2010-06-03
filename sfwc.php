@@ -5,10 +5,6 @@ function __autoload($class_name) {
     require_once(sprintf("backend/%s.class.php", $class_name));
 }
 
-/*
-    if you want to use mongodb as backend include this
-    include 'backend/CSRFTokenDatabaseStorage.class.php';
-*/
 
 /**
  * SFWC v0.1
