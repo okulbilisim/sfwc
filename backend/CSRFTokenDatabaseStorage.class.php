@@ -34,6 +34,10 @@ class CSRFTokenDatabaseStorage implements StorageInterface {
     private $collection;
     
     public function __construct() {
+        if(class_exists("Mongo") === False) {
+            echo("mongodb driver doesn't exists in your PHP configuration. install first.");
+            exit();
+        }
         $connection       = new Mongo();
         $database         = $connection->tokens;
         $this->collection = $database->token;
