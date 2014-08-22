@@ -14,27 +14,25 @@ include_once('StorageInterface.php');
  * @link        http://www.emreyilmaz.me/projects/sfwc/
  * @version     0.1
  */
-
 class CSRFTokenMemcacheStorage implements StorageInterface {
 
     /**
-    * variable that holds latest generated token.
-    * 
-    * @var string
-    * @access public
-    */
+     * variable that holds latest generated token.
+     * 
+     * @var string
+     * @access public
+     */
     public $token;
 
     /**
-    * variable that holds memcache connection.
-    * 
-    * @var object
-    * @access public
-    */
+     * variable that holds memcache connection.
+     * 
+     * @var object
+     * @access public
+     */
     public $connection;
+    public $memcacheKey = 'csrf_token_%s'; #  descriptor
 
-    public $memcacheKey = 'csrf_token_%s'; # % descriptor
-    
     public function __construct() {
         $this->connection = new Memcache;
         $this->connection->connect('127.0.0.1', 11211);
@@ -42,27 +40,27 @@ class CSRFTokenMemcacheStorage implements StorageInterface {
 
     public function createToken($descriptor) {
         /*
-        if token is not expired, dont create new one.
-        */
+          if token is not expired, dont create new one.
+         */
         $oldToken = $this->connection->get(sprintf($this->memcacheKey, $descriptor));
 
-        if(is_array($oldToken) && $oldToken["time"] + SFWC::$expireTime > time()) {
+        if (is_array($oldToken) && $oldToken["time"] + SFWC::$expireTime > time()) {
             $this->token = $oldToken["token"];
             return $this->token;
         }
-        
+
         /*
-        new random token for session and base class
-        */
+          new random token for session and base class
+         */
 
         $key = sha1(uniqid(rand(), true) . SFWC::$secret);
         $this->token = $key;
-        
+
         $data = array(
             "token" => $key,
-            "time"  => time(),
+            "time" => time(),
         );
-        $this->connection->set(sprintf($this->memcacheKey, $descriptor), $data, MEMCACHE_COMPRESSED, SFWC::$expireTime);        
+        $this->connection->set(sprintf($this->memcacheKey, $descriptor), $data, MEMCACHE_COMPRESSED, SFWC::$expireTime);
 
         return $key;
     }
@@ -77,5 +75,3 @@ class CSRFTokenMemcacheStorage implements StorageInterface {
     }
 
 }
-
-?>

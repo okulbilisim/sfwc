@@ -12,33 +12,29 @@
  * @link        http://www.emreyilmaz.me/projects/sfwc/
  * @version     0.1
  */
+interface StorageInterface {
 
-interface StorageInterface
-{
     /**
-    * creates a new token and writes is to $token
-    * 
-    * @access public
-    * @return string
-    */  
+     * creates a new token and writes is to $token
+     * 
+     * @access public
+     * @return string
+     */
     public function createToken($descriptor);
-    
+
     /**
-    * clears token for page descriptor
-    * 
-    * @access public
-    * @return string
-    */
+     * clears token for page descriptor
+     * 
+     * @access public
+     * @return string
+     */
     public function flushSession($descriptor);
 
     /**
-    * retrieve token by descriptor
-    * 
-    * @access public
-    * @return array
-    */
+     * retrieve token by descriptor
+     * 
+     * @access public
+     * @return array
+     */
     public function getTokenByDescriptor($descriptor);
 }
-
-
-?>
