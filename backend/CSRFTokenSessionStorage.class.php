@@ -10,7 +10,6 @@ include_once('StorageInterface.php');
  *
  * @file        CSRFTokenSessionStorage.class.php
  * @author      Emre Yilmaz <mail@emreyilmaz.me>
- * @license     GNU General Public License 
  * @link        http://www.emreyilmaz.me/projects/sfwc/
  * @version     0.1
  */

@@ -15,7 +15,7 @@ function __autoload($class_name) {
  *
  * @file        sfwc_main.php
  * @author      Emre Yilmaz <mail@emreyilmaz.me>
- * @license     GNU General Public License 
+
  * @link        http://www.emreyilmaz.me/projects/sfwc/
  * @version     0.1
  */
