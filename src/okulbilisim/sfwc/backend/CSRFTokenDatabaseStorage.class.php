@@ -3,15 +3,9 @@
 include_once('StorageInterface.php');
 
 /**
- * SFWC v0.1
- *
+ * 
  * mongodb based storage backend for  SFWC
  * 
- *
- * @file        CSRFTokenDatabaseStorage.class.php
- * @author      Emre Yilmaz <mail@emreyilmaz.me>
- * @link        http://www.emreyilmaz.me/projects/sfwc/
- * @version     0.1
  */
 class CSRFTokenDatabaseStorage implements StorageInterface {
 

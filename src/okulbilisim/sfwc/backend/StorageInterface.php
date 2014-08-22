@@ -1,15 +1,9 @@
 <?php
 
 /**
- * SFWC v0.1
  *
  * interface file for backends
- * 
  *
- * @file        StorageInterface.class.php
- * @author      Emre Yilmaz <mail@emreyilmaz.me>
- * @link        http://www.emreyilmaz.me/projects/sfwc/
- * @version     0.1
  */
 interface StorageInterface {
 

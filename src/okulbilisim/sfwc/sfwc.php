@@ -6,19 +6,7 @@ function __autoload($class_name) {
     require_once(sprintf("backend/%s.class.php", $class_name));
 }
 
-/**
- * SFWC v0.1
- *
- * (S)ecure (F)orms (W)ith (C)emil is a tiny php class
- * for preventing CSRF attacks easily.
- * 
- *
- * @file        sfwc_main.php
- * @author      Emre Yilmaz <mail@emreyilmaz.me>
 
- * @link        http://www.emreyilmaz.me/projects/sfwc/
- * @version     0.1
- */
 class SFWC {
 
     /**

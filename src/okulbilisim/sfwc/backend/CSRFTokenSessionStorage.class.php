@@ -3,15 +3,9 @@
 include_once('StorageInterface.php');
 
 /**
- * SFWC v0.1
  *
  * Session based storage backend for  SFWC
  * 
- *
- * @file        CSRFTokenSessionStorage.class.php
- * @author      Emre Yilmaz <mail@emreyilmaz.me>
- * @link        http://www.emreyilmaz.me/projects/sfwc/
- * @version     0.1
  */
 class CSRFTokenSessionStorage implements StorageInterface {
 
