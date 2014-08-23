@@ -1,5 +1,6 @@
+**_hardly in development_**
+
 #SFWC
-=====
 
 SFWC is a tiny php library for preventing CSRF attacks.
 
